@@ -1,0 +1,21 @@
+{
+    "name" : "alsar/monolog-extensions-bundle",
+    "description" : "Integration of alsar/monolog-extensions with Symfony2",
+    "type" : "symfony-bundle",
+    "license" : "MIT",
+	"keywords" : [
+		"monolog",
+		"symfony"
+	],
+    "require" : {
+        "php" : ">=5.4",
+        "symfony/framework-bundle" : "~2.3",
+        "alsar/monolog-extensions" : "~0.1"
+    },
+	"autoload" : {
+		"psr-0" : {
+			"Alsar\\MonologExtensionsBundle" : ""
+		}
+	},
+	"target-dir" : "Alsar/MonologExtensionsBundle"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="alsar_monolog_extensions.monolog.processor.request.class">Alsar\Monolog\Processor\RequestProcessor</parameter>
+        <parameter key="alsar_monolog_extensions.monolog.processor.browscap.class">Alsar\Monolog\Processor\BrowscapProcessor</parameter>
+        <parameter key="alsar_monolog_extensions.monolog.processor.user.class">Alsar\MonologExtensionsBundle\Monolog\Processor\ContainerWrapperUserProcessor</parameter>
+    </parameters>
+    <services>
+        <service id="alsar_monolog_extensions.monolog.processor.request" class="%alsar_monolog_extensions.monolog.processor.request.class%" public="false">
+            <argument type="service" id="request_stack"></argument>
+        </service>
+        <service id="alsar_monolog_extensions.monolog.processor.browscap" class="%alsar_monolog_extensions.monolog.processor.browscap.class%" public="false">
+            <argument type="service" id="request_stack"></argument>
+        </service>
+        <service id="alsar_monolog_extensions.monolog.processor.user" class="%alsar_monolog_extensions.monolog.processor.user.class%" public="false">
+            <argument type="service" id="service_container"></argument>
+        </service>
+    </services>
+</container>
